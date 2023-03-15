@@ -1,0 +1,21 @@
+#
+# 	AutoCrop
+# 	WatsonLLC
+# 	 v1.1.0
+#
+
+# Enable the plugin
+enabled: true
+
+# Automatically put the crop in the player inventory
+dropToInventory: false
+
+# Increase crop yield with fortune
+useFortune: true
+
+# Resets the crop age, 0-7
+# [Wheat, Carrot, Potato] maxAge: 7
+# [Beetroot] maxAge: 3
+# [Cocoa] maxAge: 2
+# it will automatically set to maxAge if greater than.
+resetAgeTo: 1
