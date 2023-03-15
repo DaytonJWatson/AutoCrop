@@ -66,6 +66,7 @@ public class PlayerBreak implements Listener {
 				reAge(resetAge);
 			}
 			dropCrop(fortuneAmount());
+			seedHandler();
 		} else {
 			return;
 		}
@@ -113,16 +114,6 @@ public class PlayerBreak implements Listener {
 		ItemStack cropType = new ItemStack(getNewType());
 		cropType.setAmount(amount);
 
-		if (crop == Material.WHEAT) {
-			ItemStack seeds = new ItemStack(Material.WHEAT_SEEDS);
-			seeds.setAmount(1);
-			player.getWorld().dropItem(blockLoc, seeds);
-		} else if(crop == Material.BEETROOTS) {
-			ItemStack seeds = new ItemStack(Material.BEETROOT_SEEDS);
-			seeds.setAmount(1);
-			player.getWorld().dropItem(blockLoc, seeds);
-		}
-
 		if (Config.getBoolean("dropToInventory")) {
 			if (inv.firstEmpty() == -1) {
 				player.getWorld().dropItem(blockLoc, cropType);
@@ -131,6 +122,21 @@ public class PlayerBreak implements Listener {
 			}
 		} else {
 			player.getWorld().dropItem(blockLoc, cropType);
+		}
+	}
+	
+	// drops beetroot and wheat seeds
+	private void seedHandler() {
+		if (crop == Material.WHEAT) {
+			ItemStack seeds = new ItemStack(Material.WHEAT_SEEDS);
+			seeds.setAmount(1);
+			player.getWorld().dropItem(blockLoc, seeds);
+		} else if(crop == Material.BEETROOTS) {
+			ItemStack seeds = new ItemStack(Material.BEETROOT_SEEDS);
+			seeds.setAmount(1);
+			player.getWorld().dropItem(blockLoc, seeds);
+		} else {
+			return;
 		}
 	}
 
