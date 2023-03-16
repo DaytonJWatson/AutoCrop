@@ -44,7 +44,6 @@ public class PlayerBreak implements Listener {
 		inv = player.getInventory();
 		loc = player.getLocation();
 		blockLoc = block.getLocation();
-
 		
 		// cocoa beans
 		if(enabled && isCropOther() && getAge() >= maxAge) {
@@ -167,8 +166,6 @@ public class PlayerBreak implements Listener {
 
 	private Material getNewType() {
 		switch (block.getType()) {
-		case GLOW_BERRIES:
-			return Material.GLOW_BERRIES;
 		case COCOA:
 			return Material.COCOA_BEANS;
 		case BEETROOTS:
@@ -197,9 +194,6 @@ public class PlayerBreak implements Listener {
 	private boolean isCrop() {
 		switch (block.getType()) {
 		case BEETROOTS:
-			maxAge = getMaxAge();
-			return true;
-		case GLOW_BERRIES:
 			maxAge = getMaxAge();
 			return true;
 		case POTATOES:

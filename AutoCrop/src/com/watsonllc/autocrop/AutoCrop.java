@@ -18,5 +18,9 @@ public class AutoCrop extends JavaPlugin {
 		Commands.setup();
 		Config.setup();
 	}
-	
+
+	@Override
+	public void onDisable() {
+		
+	}
 }
